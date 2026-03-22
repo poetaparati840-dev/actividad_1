@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>App de Animales</title>
+
+<style>
+body{
+    font-family: Arial;
+    text-align: center;
+    background: #f2f2f2;
+}
+
+.pantalla{
+    display: none;
+    padding: 20px;
+}
+
+.activa{
+    display: block;
+}
+
+button{
+    padding: 10px 20px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+img{
+    width: 200px;
+    margin: 10px;
+}
+</style>
+
+<script>
+function mostrarPantalla(id){
+    let pantallas = document.getElementsByClassName("pantalla");
+    for(let i=0; i<pantallas.length; i++){
+        pantallas[i].classList.remove("activa");
+    }
+    document.getElementById(id).classList.add("activa");
+}
+</script>
+
+</head>
+
+<body>
+
+<!-- 🟢 PANTALLA 1 -->
+<div id="menu" class="pantalla activa">
+    <h1>App de Animales</h1>
+    <h3>Alumno: Carlos Araujo</h3>
+
+    <button onclick="mostrarPantalla('abeja')">Abeja</button>
+    <button onclick="mostrarPantalla('mariposa')">Mariposa</button>
+</div>
+
+<!-- 🟢 PANTALLA 2 -->
+<div id="abeja" class="pantalla">
+    <h2>La Abeja</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4e/Honeybee-27527-1.jpg">
+    <p>
+        La abeja es un insecto que produce miel y ayuda a la polinización
+        de las plantas.
+    </p>
+
+    <button onclick="mostrarPantalla('menu')">Regresar</button>
+</div>
+
+<!-- 🟢 PANTALLA 3 -->
+<div id="mariposa" class="pantalla">
+    <h2>La Mariposa</h2>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3c/Monarch_In_May.jpg">
+    <p>
+        La mariposa es un insecto con alas coloridas que pasa por
+        un proceso llamado metamorfosis.
+    </p>
+
+    <button onclick="mostrarPantalla('menu')">Regresar</button>
+</div>
+
+</body>
+</html>
